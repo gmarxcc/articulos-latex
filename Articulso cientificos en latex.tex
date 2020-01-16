@@ -1,0 +1,261 @@
+%Presentación del Curso de LaTeX preparado para 
+%el ITM, 19 a 23 de enero 2015
+%--------------------------------
+\documentclass{beamer}
+
+\usetheme{Darmstadt}
+%\usecolortheme{seahorse}
+\setbeamercovered{transparent}
+%Librerías requeridas
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+%\usepackage{multicol}
+\usepackage{color}
+\usepackage{listings}
+\usepackage{subfig}
+\usepackage{booktabs}
+%Configuración del código de ejemplo:
+\lstset{frame=single, language=[LaTeX]TeX}
+%numbers=left, numberstyle=\tiny\color{gray}, numbersep=5pt, stepnumber=2,
+
+
+
+%Variables globales
+\graphicspath{imagenes/}
+\title[How to use IEEEtran]{How to use IEEEtran \LaTeX\, class}
+\author[Gerardo Marx]{
+José Antonio Gutiérrez Gnecchi,\\
+Gerardo Marx Chávez Campos}
+\institute[Tec. Morelia]{Instituto Tecnológico de Morelia\\
+Posgrado de electrónica}
+
+\begin{document}
+
+%----Portada:
+\begin{frame}
+\titlepage
+\end{frame}
+
+%----------
+\section{LaTeX 101}
+\subsection{What the heck is LaTeX?}
+\begin{frame}{\LaTeX{} 101}
+\begin{block}{What the heck is \LaTeX?}
+\LaTeX{} is a document preparation system for high-quality typesetting. It is most often used for medium-to-large technical or scientific documents but it can be used for almost any form of publishing.
+
+\LaTeX{} is not a word processor! Instead, \LaTeX{} encourages authors not to worry too much about the appearance of their documents but to concentrate on getting the right content\cite{latexProject}.
+\end{block}
+
+\begin{block}{Why should I use \LaTeX?}
+There are many other conventional options like Microsoft Word, \LaTeX can easily adapt and develop new command, environment or stencil to be used in mathematics, chemistry, physics, music and other fields \cite{guiaLatex2014}.
+\end{block}
+\end{frame}
+%Instalación:
+
+\subsection{Installing \LaTeX}%----TexWorks:
+\begin{frame}{Installing \LaTeX}
+Follow the next steps to get a proper working \TeX Works
+\begin{enumerate}
+\item Install basic Mike\TeX,
+\item Install \TeX Works 
+\end{enumerate}
+\vspace{1cm}
+\centering
+\textbf{or just create a Overleaf account!}
+\end{frame}
+
+%---------Estructura
+\subsection{Document structure}
+\begin{frame}[containsverbatim]
+\frametitle{Document structure}
+A \LaTeX{} document has two main parts: preamble and body\cite{documentoLaTeX2014}.\\
+
+The preamble contains general configuration that modifies entire document, commonly are the first lines of code and looks like:
+\begin{lstlisting}[keywordstyle=\color{blue}]
+\documentclass[options]{documentclass}
+\usepackage[opciones]{package}
+...
+\end{lstlisting}
+The body always is between the next code environment: 
+\begin{lstlisting}[keywordstyle=\color{blue}]
+\begin{document}
+- Put your code here -
+\end{document}
+\end{lstlisting}
+\end{frame}
+
+
+%---------
+\subsection{Class option}
+\begin{frame}[containsverbatim]
+\frametitle{IEEE class}
+	There are a number of class options that can be used to control the overall mode and behavior of IEEEtran, e.g.
+\begin{lstlisting}[keywordstyle=\color{blue}]
+\documentclass[9pt,draft]{IEEEtran}
+\usepackage{amsmath}
+\usepackage{lipsum}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+...
+\end{lstlisting}
+\end{frame}
+
+
+%---------
+\section{The title page}
+\subsection{Paper title}
+\begin{frame}[containsverbatim]
+\frametitle{Paper title}
+	Titles are generally capitalized except for words such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to and up, which are usually not capitalized unless they are the first or last word of the title. Line breaks ($\backslash \backslash $) may be used to equalize the length of the title lines. Do not use math or other special symbols in the title.
+	
+\begin{lstlisting}[keywordstyle=\color{blue}]
+\documentclass[9pt,draft]{IEEEtran}
+\usepackage{amsmath}
+\usepackage{lipsum}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\title{How to Use the IEEEtran \LaTeX{} Class}
+...
+\end{lstlisting}
+\end{frame}
+
+%---------
+\subsection{Author names}
+\begin{frame}[containsverbatim]
+\frametitle{Author names}
+The name and associated information is declared with the       $\backslash $ author command.
+	
+\begin{lstlisting}[keywordstyle=\color{blue}]
+\documentclass[9pt,draft]{IEEEtran}
+\usepackage{amsmath}
+\usepackage{lipsum}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\title{How to Use the IEEEtran \LaTeX{} Class}
+\author{Chavez-Campos~Gerardo~Marx,
+~\IEEEmembership{Member,~IEEE.}%
+\thanks{This work was supported by the IEEE.}}
+\begin{document}
+\maketitle
+\end{document}
+\end{lstlisting}
+\end{frame}
+
+%---------
+\subsection{Abstract and index terms}
+\begin{frame}[containsverbatim]
+\frametitle{Abstract}
+The abstract is generally the first part of a paper after $\backslash$ maketitle. The abstract text is placed within the abstract environment:
+\begin{lstlisting}[keywordstyle=\color{blue}]
+\documentclass[options]{IEEEtran}
+- Preamble -
+\begin{document}
+\maketitle
+\begin{abstract}Put here your abstract ...\end{abstract}	
+\end{document}
+\end{lstlisting}
+Math, special symbols and/or citations should generally not be used in abstracts
+\end{frame}
+
+
+\begin{frame}[containsverbatim]
+\frametitle{Index terms}
+Journal and technote papers also have a list of key words (index terms) which can be declared with:
+\begin{lstlisting}[keywordstyle=\color{blue}]
+\begin{IEEEkeywords}Broad band networks, quality of service, WDM.\end{IEEEkeywords}
+\end{lstlisting}
+\end{frame}
+
+%---------
+\section{Sections and initial drop capital letter}
+\subsection{Sections}
+\begin{frame}[containsverbatim]
+Sections and their headings are declared in the usual LATEX fashion via $\backslash$section, $\backslash$subsection, $\backslash$subsubsection, and $\backslash$paragraph.
+
+While the first letter of a journal paper is a large, capital, oversized letter which descends one line below the baseline.
+
+\begin{lstlisting}[keywordstyle=\color{blue}]
+- Body of document -
+\section{Introduction}\IEEEPARstart{T}{he} LED technology ......
+\end{lstlisting}
+\end{frame}
+
+%---------
+\section{Some useful environments}
+\subsection{Math}
+\begin{frame}[containsverbatim]
+\frametitle{Equation and eqref}
+Equations are created using the traditional equation environment:
+
+\begin{lstlisting}[keywordstyle=\color{blue}]
+- Body of document -
+\begin{equation}\label{eqn_example}x = \sum\limits_{i=0}^{z} 2^{i}Q\end{equation}
+
+... as can seen in \eqref{eqn_example} ...	
+\end{lstlisting}
+\end{frame}
+
+%-----------
+
+\subsection{Figures}
+\begin{frame}[containsverbatim]
+
+\begin{lstlisting}[keywordstyle=\color{blue}]
+- Body of document -
+\figurename \ref{fig:sim}
+
+\begin{figure}[!t]\centering\includegraphics[width=2.5in]{myfigure}\caption{Simulation results for the network.}\label{fig:sim}\end{figure}
+\end{lstlisting}
+\end{frame}
+
+
+
+
+\subsection{Tables}
+
+\begin{frame}[containsverbatim]
+
+\begin{lstlisting}[keywordstyle=\color{blue}]
+- Body of document -
+\tablename \label{tb:example}
+
+\begin{table}[!t]\renewcommand{\arraystretch}{1.3}\caption{A Simple Example Table}\label{tb:example}\centering\begin{tabular}{c||c}\hline\bfseries First & \bfseries Next\\\hline\hline1.0 & 2.0\\\hline\end{tabular}\end{table}
+\end{lstlisting}
+\end{frame}
+
+
+\subsection{List}
+\begin{frame}[containsverbatim]
+
+\begin{lstlisting}[keywordstyle=\color{blue}]
+- Body of document -
+
+\begin{itemize}[\IEEEsetlabelwidth{Z}]\item[X] blah\item[Y] blah..\end{itemize}
+	
+\end{lstlisting}
+\end{frame}
+
+\section{End sections}
+\subsection{Biblioagraphy}
+\subsection{Biographies}
+
+
+
+%Bibliography:
+\begin{thebibliography}{10}
+
+\bibitem{latexProject}[\LaTeX{} project, 2015]
+http://latex-project.org
+\newblock An introduction to \LaTeX{}, a document preparation system.
+	
+\bibitem{guiaLatex2014}[Nokyotsu, 2014]
+http://nokyotsu.com.
+\newblock LaTeX Fácil: Guía rápida de \LaTeX 
+
+ 
+
+\end{thebibliography}
+
+
+\end{document}
