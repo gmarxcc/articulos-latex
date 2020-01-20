@@ -1,0 +1,9 @@
+\frametitle{Primer documento en \LaTeX}
+%\ejemplo1
+Realicemos un primer documento para probar que las herramientas funcionan correctamente.
+% \begin{lstlisting}[label=ejemplo1,caption=Hola mundo]
+% \documentclass{book}
+% \begin{document}
+%     Hola mundo
+% \end{document}
+% \end{lstlisting}
