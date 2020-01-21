@@ -281,15 +281,16 @@ Algunos de los paquetes básicos son:
 \section{Día 2: Sección Introducción }
 % +++++++++++++++++++
 \subsection{Revisando una introducción}
-\begin{frame}[plain]
+\begin{frame}
   \frametitle{Introducción de ejemplo}
   \includegraphics[width=4.5in]{1introduction}
 \end{frame}
-
-%+++++++++++++++++++
-\begin{frame}[plain]
-  \includegraphics[width=4.5in]{meme-1}
+ \begin{frame}
+  \frametitle{Nuestra introducción}
+  \centering
+  \includegraphics[width=4.5in]{mistakes} 
 \end{frame}
+%+++++++++++++++++++
 %+++++++++++++++++++
 \subsection{Bibliografía}
 \begin{frame}{Entorno bibliografía}
@@ -320,7 +321,7 @@ Preambulo
   número de entradas que habrá en el
   documento. Y cada entrada va acompañada del
   comando \texttt{$\backslash$bibitem}, el
-  argumento (clave1) es una referencia para
+  argumento (\texttt{clave1}) es una referencia para
   el usuario y se recomienda que sea el autor
   y el año, tal como se usa en el estilo de
   referencias tipo \textbf{Harvard}. El texto
@@ -328,7 +329,6 @@ Preambulo
   del estilo de documento que se redacte.
 \end{frame}
 %+++++++++++++++++++
-
 \begin{frame}[containsverbatim]
 \frametitle{Citas bibliográficas}
 Para hacer una cita bibliográfica debe usarse la instrucción \texttt{$\backslash$cite} con la etiqueta correspondiente.
@@ -339,9 +339,10 @@ Como se puede ver en \cite{Mata2014} ...
 Como se puede ver en \cite[pag 3]{Mata2014}...
 \end{lstlisting}
 \end{frame}
-
 %+++++++++++++++++++
-
+\begin{frame}[plain]
+  \includegraphics[width=4.5in]{meme-1}
+\end{frame}
 %+++++++++++++++++++
 %+++++++++++++++++++
 %+++++++++++++++++++
